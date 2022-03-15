@@ -15,8 +15,8 @@ app.use(fileUpload({
     useTempFiles: true
 }))
 
-// // Routes
-// app.use('/user', require('./routes/userRouter'))
+// Routes
+ app.use('/user', require('./routers/userRouter'))
 // app.use('/api', require('./routes/categoryRouter'))
 // app.use('/api', require('./routes/upload'))
 // app.use('/api', require('./routes/productRouter'))
@@ -29,17 +29,15 @@ const URI = process.env.MONGODB_URL
 mongoose.connect(URI, {
  //   useCreateIndex: true,
  //   useFindAndModify: false,
-//    useNewUrlParser: true,
- //   useUnifiedTopology: true
+   useNewUrlParser: true,
+   useUnifiedTopology: true
 }, err =>{
     if(err) throw err;
     console.log('Connected to MongoDB')
 })
 
 
-app.get('/',(req,res) => {
-    res.json({msg: "welcome my chennel"})
-})
+
 // if(process.env.NODE_ENV === 'production'){
 //     app.use(express.static('client/build'))
 //     app.get('*', (req, res) => {
