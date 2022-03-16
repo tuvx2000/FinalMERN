@@ -12,7 +12,7 @@ cloudinary.config({
     api_secret: process.env.CLOUD_API_SECRET
 })
 // only admin can use these function
-router.post('/upload',auth , authAdmin, (req, res) =>{
+router.post('/upload', (req, res) =>{
     try {
         if(!req.files || Object.keys(req.files).length === 0)
             return res.status(400).json({msg: 'No files were uploaded.'})
@@ -44,7 +44,7 @@ router.post('/upload',auth , authAdmin, (req, res) =>{
     }
 })
 
-router.post('/destroy',auth , authAdmin,(req, res) =>{
+router.post('/destroy',(req, res) =>{
     try {
         const {public_id} = req.body;
         if(!public_id) 
