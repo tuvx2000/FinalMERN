@@ -16,11 +16,11 @@ app.use(fileUpload({
 }))
 
 // Routes
- app.use('/user', require('./routers/userRouter'))
-// app.use('/api', require('./routes/categoryRouter'))
-// app.use('/api', require('./routes/upload'))
-// app.use('/api', require('./routes/productRouter'))
-// app.use('/api', require('./routes/paymentRouter'))
+app.use('/user', require('./routers/userRouter'))
+app.use('/api', require('./routers/categoryRouter'))
+// app.use('/api', require('./routers/upload'))
+// app.use('/api', require('./routers/productRouter'))
+// app.use('/api', require('./routers/paymentRouter'))
 
 
 
