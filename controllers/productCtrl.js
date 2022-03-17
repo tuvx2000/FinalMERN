@@ -16,7 +16,7 @@ class APIfeatures {
         let queryStr = JSON.stringify(queryObj)
         queryStr = queryStr.replace(/\b(gte|gt|lt|lte|regex)\b/g, match => '$' + match)
  
-        console.log("filter by :",{queryObj,queryStr})
+        // console.log("filter by :",{queryObj,queryStr})
      //    gte = greater than or equal
      //    lte = lesser than or equal
      //    lt = lesser than
@@ -42,7 +42,7 @@ class APIfeatures {
 
     paginating(){
         const page = this.queryString.page * 1 || 1
-        const limit = this.queryString.limit * 1 || 2
+        const limit = this.queryString.limit * 1 || 9
         const skip = (page - 1) * limit;
         this.query = this.query.skip(skip).limit(limit)
         return this;
