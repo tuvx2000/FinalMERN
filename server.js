@@ -20,7 +20,7 @@ app.use('/user', require('./routers/userRouter'))
 app.use('/api', require('./routers/categoryRouter'))
 app.use('/api', require('./routers/uploadFileRouter'))
 app.use('/api', require('./routers/productRouter'))
-// app.use('/api', require('./routers/paymentRouter'))
+app.use('/api', require('./routers/paymentRouter'))
 
 
 
