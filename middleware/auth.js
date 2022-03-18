@@ -4,11 +4,14 @@ const auth = (req, res, next) =>{
     try {
         const token = req.header("Authorization")
         if(!token) 
-        return res.status(400).json({msg: "400 status code"})
+        return res.status(400).json({msg: "Is not Admin"})
 
         jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) =>{
             if(err) 
-            return res.status(400).json({msg: "400 status code"})
+            {
+                return res.status(400).json({msg: "400 status code Aut"})
+
+            }
 
             req.user = user
             next()
