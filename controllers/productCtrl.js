@@ -61,6 +61,8 @@ const productCtrl = {
 
             const products = await features.query
 
+            console.log("BACKEND GEtingggg products")
+
 
             res.json({
                 status: 'success',
@@ -74,7 +76,7 @@ const productCtrl = {
     },
     createProduct: async(req, res) =>{
         try {
-
+            console.log("BACKEND Creating products")
             const {product_id, title, price, description, content, images, category} = req.body;
 
             if(!images) 
@@ -97,6 +99,8 @@ const productCtrl = {
     },
     deleteProduct: async(req, res) =>{
         try {
+            console.log("BACKEND Deletinggg products")
+
             await Products.findByIdAndDelete(req.params.id)
             res.json({msg: "Deleted a Product"})
         } catch (err) {
@@ -105,6 +109,9 @@ const productCtrl = {
     },
     updateProduct: async(req, res) =>{
         try {
+            console.log("BACKEND Updatingggg products")
+
+
             const {title, price, description, content, images, category} = req.body;
             if(!images) return res.status(400).json({msg: "No image upload"})
 
